@@ -35,7 +35,9 @@ int main()
         system("open https://sg.search.yahoo.com/search;_ylt=Awrx_Z62SFljjswP_joi4gt.;_ylc=X1MDMjExNDcwODAwMgRfcgMyBGZyAwRmcjIDc2ItdG9wLXNlYXJjaARncHJpZANtN0owdGRZalJuLlFDWGxicklvdWtBBG5fcnNsdAMwBG5fc3VnZwMxMARvcmlnaW4Dc2cuc2VhcmNoLnlhaG9vLmNvbQRwb3MDMARwcXN0cgMEcHFzdHJsAzAEcXN0cmwDOQRxdWVyeQN3aWtpcGVkaWEEdF9zdG1wAzE2NjY3OTU2OTY-?p=wikipedia&fr=sfp&iscqry=&fr2=sb-top-search");  
     }
     pthread_create(&thread1, NULL, NULL, NULL);
+    kill(thread1, SIGSTOP);
+    sleep(5);
+    kill(thread1, SIGCONT);
     pthread_join( thread1, NULL);
-    
 }
 
